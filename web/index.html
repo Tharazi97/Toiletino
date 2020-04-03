@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>Toiletino</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css" type="text/css" media="only screen and (min-width:1000px)">
+        <link rel="stylesheet" href="styleMobile.css" type="text/css" media="only screen and (max-width: 999px)">
+        <link rel="stylesheet" type="text/css" href="daterangepicker.css" />
+        <link rel="shortcut icon" href="fac.ico" type="image/x-icon">
+        <link rel="icon" href="fac.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <script>
+            // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+            let vh = window.innerHeight * 0.01;
+            // Then we set the value in the --vh custom property to the root of the document
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        </script>
+        <div id="container">
+            <header>
+                <div id="logo">
+                    <img src="logo2.png" />
+                </div>
+            </header>
+
+            <div id="options">
+                <div id="graphSettings">
+                    <div id="pollution" class="optionsButton chosen">pollution</div> 
+                    <div id="temperature" class="optionsButton">temperature</div> 
+                    <div id="humidity" class="optionsButton">humidity</div> 
+                </div>
+                <div id="dateSettings">
+                    <div id="refresh" class="optionsButton"><i class="fa fa-refresh" aria-hidden="true"></i></div> 
+                    <div id="prevWeekButton" class="optionsButton">&lt; week</div> 
+                    <div id="prevDayButton" class="optionsButton">&lt; day</div> 
+                    <div id="nextDayButton" class="optionsButton">day &gt;</div>
+                    <div id="nextWeekButton" class="optionsButton">week &gt;</div>
+                    <div id="reportRange">
+                        <!--<i class="fa fa-caret-down"></i>--></i>&nbsp;
+                        <span id="date"></span> <i class="fa fa-calendar"></i>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="mycanvas"></canvas>
+            </div>
+        </div>
+
+        <!-- javascript -->
+        <script>
+            function myFunction() {
+                var reklama = document.body.children;
+                var i = 0;
+                while(true){
+                    if(reklama[i].tagName == "DIV"){
+                        reklama[i].style.display = "none";
+                        break;
+                    }
+                    i = i + 1;
+                }
+            }
+            //setInterval(myFunction, 1000);
+            myFunction();
+        </script>
+        <script type="text/javascript" src="JS/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <script type="text/javascript" src="JS/Chart.min.js"></script>
+        <script type="text/javascript" src="JS/linegraph.js"></script>
+    </body>
+</html>
