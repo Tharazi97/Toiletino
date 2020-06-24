@@ -1,7 +1,7 @@
 #include <avr/io.h>
 #include <Arduino.h>
 #define SERIAL_SEND 0
-#define SERIAL_RATE 9600
+#define SERIAL_RATE 2400
 
 #define SERIAL_BIT_TIME (1000000.0 / SERIAL_RATE) / (1.0 / 9.6 * 64)
 
